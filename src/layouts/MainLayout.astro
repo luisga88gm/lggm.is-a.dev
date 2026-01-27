@@ -60,7 +60,7 @@ const { title } = Astro.props;
 			<ul class="hidden md:flex gap-8 lg:gap-10 text-3xl font-medium" style="font-family: 'League Gothic', Impact, sans-serif;">
 				<li><a href="/" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.home">Home</a></li>
 				<li><a href="/projects" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.projects">Projects</a></li>
-				<li><a href="/#services" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.services">Services</a></li>
+				<li><a href="/services" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.services">Services</a></li>
 				<li><a href="/#certificates" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.certificates">Certificates</a></li>
 				<li><a href="/contact" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.contact">Contact</a></li>
 			</ul>
@@ -79,12 +79,37 @@ const { title } = Astro.props;
 			</div>
 
 			<!-- Mobile Menu Button -->
-			<button class="md:hidden flex flex-col gap-1.5 group">
-				<span class="w-6 h-0.5 bg-[#ff007f] transition-all"></span>
-				<span class="w-6 h-0.5 bg-[#00f2ff] transition-all"></span>
-				<span class="w-6 h-0.5 bg-[#ff8c00] transition-all"></span>
+			<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 group z-50 relative" aria-label="Toggle menu">
+				<span class="hamburger-line w-6 h-0.5 bg-[#ff007f] transition-all duration-300"></span>
+				<span class="hamburger-line w-6 h-0.5 bg-[#00f2ff] transition-all duration-300"></span>
+				<span class="hamburger-line w-6 h-0.5 bg-[#ff8c00] transition-all duration-300"></span>
 			</button>
 		</nav>
+
+		<!-- Mobile Menu Overlay -->
+		<div id="mobile-menu" class="mobile-menu fixed inset-0 bg-[#0b0b0f]/98 backdrop-blur-lg z-40 translate-x-full transition-transform duration-300 md:hidden">
+			<div class="flex flex-col items-center justify-center h-full gap-8 px-8">
+				<!-- Mobile Navigation Links -->
+				<a href="/" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.home">Home</a>
+				<a href="/projects" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.projects">Projects</a>
+				<a href="/services" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.services">Services</a>
+				<a href="/#certificates" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.certificates">Certificates</a>
+				<a href="/contact" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.contact">Contact</a>
+				
+				<!-- Mobile Language Switcher -->
+				<div class="flex gap-4 mt-8">
+					<button data-lang="es" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="Español">
+						ES
+					</button>
+					<button data-lang="en" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="English">
+						GB
+					</button>
+					<button data-lang="it" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="Italiano">
+						IT
+					</button>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<!-- Main Content -->
@@ -137,6 +162,65 @@ const { title } = Astro.props;
 	};
 
 	document.addEventListener('DOMContentLoaded', () => {
+		// Mobile menu functionality
+		const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+		const mobileMenu = document.getElementById('mobile-menu');
+		const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+		let isMenuOpen = false;
+
+		if (mobileMenuBtn && mobileMenu) {
+			// Toggle menu
+			mobileMenuBtn.addEventListener('click', () => {
+				isMenuOpen = !isMenuOpen;
+				
+				if (isMenuOpen) {
+					mobileMenu.classList.remove('translate-x-full');
+					mobileMenu.classList.add('translate-x-0');
+					// Animate hamburger to X
+					const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
+				(lines[0] as HTMLElement).style.transform = 'rotate(45deg) translateY(8px)';
+				(lines[1] as HTMLElement).style.opacity = '0';
+				(lines[2] as HTMLElement).style.transform = 'rotate(-45deg) translateY(-8px)';
+					document.body.style.overflow = 'hidden';
+				} else {
+					mobileMenu.classList.remove('translate-x-0');
+					mobileMenu.classList.add('translate-x-full');
+					// Reset hamburger
+					const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
+				(lines[0] as HTMLElement).style.transform = '';
+				(lines[1] as HTMLElement).style.opacity = '1';
+				(lines[2] as HTMLElement).style.transform = '';
+					document.body.style.overflow = '';
+				}
+			});
+
+			// Close menu when clicking on a link
+		const closeMenu = () => {
+			isMenuOpen = false;
+			mobileMenu.classList.remove('translate-x-0');
+			mobileMenu.classList.add('translate-x-full');
+			const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
+			(lines[0] as HTMLElement).style.transform = '';
+			(lines[1] as HTMLElement).style.opacity = '1';
+			(lines[2] as HTMLElement).style.transform = '';
+			document.body.style.overflow = '';
+		};
+
+		mobileNavLinks.forEach(link => {
+			link.addEventListener('click', (e) => {
+				// Always close menu immediately
+				setTimeout(closeMenu, 100);
+			});
+		});
+
+		// Close menu when clicking outside
+		mobileMenu.addEventListener('click', (e) => {
+			if (e.target === mobileMenu) {
+				closeMenu();
+			}
+			});
+		}
+
 		// Header scroll effect
 		const header = document.getElementById('header');
 		

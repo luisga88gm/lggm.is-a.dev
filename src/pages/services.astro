@@ -1,0 +1,245 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Services | LGGM">
+	<!-- Hero Section with Video -->
+	<section class="relative h-screen overflow-hidden bg-[#0b0b0f]">
+		<!-- Video Background -->
+		<video 
+			id="services-video"
+			class="absolute inset-0 w-full h-full object-cover scale-105 opacity-0 transition-opacity duration-[1500ms]"
+			src="/images/services_video.mp4"
+			poster="/images/services_hero.png"
+			autoplay
+			loop
+			muted
+			playsinline>
+		</video>
+
+		<!-- Overlay Gradient -->
+		<div class="absolute inset-0 bg-gradient-to-b from-[#0b0b0f] via-[#0b0b0f]/40 to-[#0b0b0f] z-10"></div>
+
+		<!-- Hero Content -->
+		<div class="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center">
+			<h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-6 uppercase" 
+				style="font-family: 'League Gothic', Impact, sans-serif; 
+				background: linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%); 
+				-webkit-background-clip: text; 
+				background-clip: text;
+				-webkit-text-fill-color: transparent;"
+				data-i18n="services.hero.title">
+				SYSTEM CAPABILITIES
+			</h1>
+			<p class="text-lg sm:text-xl font-mono text-[#00f2ff]" 
+				data-i18n="services.hero.terminal">
+				// Status: Online - Terminal Ready
+			</p>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section class="relative min-h-screen bg-[#0b0b0f] pt-32 pb-20 px-6 sm:px-8 lg:px-12">
+		<div class="container mx-auto max-w-7xl">
+			<!-- Header -->
+			<div class="text-center mb-20">
+				<h2 class="text-6xl sm:text-7xl md:text-8xl font-bold mb-6 uppercase" 
+					style="font-family: 'League Gothic', Impact, sans-serif; 
+					background: linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%); 
+					-webkit-background-clip: text; 
+					background-clip: text;
+					-webkit-text-fill-color: transparent;"
+					data-i18n="services.title">
+					SERVICIOS
+				</h2>
+				<p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto" 
+					data-i18n="services.subtitle">
+					Soluciones digitales a medida para impulsar tu negocio
+				</p>
+			</div>
+
+			<!-- Services Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+				
+				<!-- Service Card 1: Frontend Frameworks -->
+				<div class="group relative p-8 sm:p-10 rounded-xl border-2 border-[#00f2ff] bg-[#13131a]/70 backdrop-blur-sm
+					shadow-[0_0_15px_rgba(0,242,255,0.3)] hover:shadow-[0_0_30px_rgba(0,242,255,0.6)]
+					transition-all duration-500 hover:scale-105">
+					
+					<!-- Icon -->
+					<div class="mb-6 flex justify-center">
+						<svg class="w-16 h-16 sm:w-20 sm:h-20 text-[#00f2ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+						</svg>
+					</div>
+					
+					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#00f2ff]" 
+						style="font-family: 'League Gothic', Impact, sans-serif;"
+						data-i18n="services.card1.title">
+						FRONTEND FRAMEWORKS
+					</h3>
+					
+					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base" 
+						data-i18n="services.card1.description">
+						Construcción de interfaces modernas y responsivas con React, Vue y Angular. Experiencias de usuario fluidas con tecnologías de vanguardia.
+					</p>
+				</div>
+
+				<!-- Service Card 2: Backend Systems -->
+				<div class="group relative p-8 sm:p-10 rounded-xl border-2 border-[#ff007f] bg-[#13131a]/70 backdrop-blur-sm
+					shadow-[0_0_15px_rgba(255,0,127,0.3)] hover:shadow-[0_0_30px_rgba(255,0,127,0.6)]
+					transition-all duration-500 hover:scale-105">
+					
+					<!-- Icon -->
+					<div class="mb-6 flex justify-center">
+						<svg class="w-16 h-16 sm:w-20 sm:h-20 text-[#ff007f]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+						</svg>
+					</div>
+					
+					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#ff007f]" 
+						style="font-family: 'League Gothic', Impact, sans-serif;"
+						data-i18n="services.card2.title">
+						BACKEND SYSTEMS
+					</h3>
+					
+					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base" 
+						data-i18n="services.card2.description">
+						Desarrollo de soluciones robustas del lado del servidor con Node.js, Python y bases de datos. Garantizando escalabilidad y rendimiento para tus aplicaciones.
+					</p>
+				</div>
+
+				<!-- Service Card 3: Cloud Architecture -->
+				<div class="group relative p-8 sm:p-10 rounded-xl border-2 border-[#00f2ff] bg-[#13131a]/70 backdrop-blur-sm
+					shadow-[0_0_15px_rgba(0,242,255,0.3)] hover:shadow-[0_0_30px_rgba(0,242,255,0.6)]
+					transition-all duration-500 hover:scale-105">
+					
+					<!-- Icon -->
+					<div class="mb-6 flex justify-center">
+						<svg class="w-16 h-16 sm:w-20 sm:h-20 text-[#00f2ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+						</svg>
+					</div>
+					
+					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#00f2ff]" 
+						style="font-family: 'League Gothic', Impact, sans-serif;"
+						data-i18n="services.card3.title">
+						CLOUD ARCHITECTURE
+					</h3>
+					
+					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base" 
+						data-i18n="services.card3.description">
+						Diseño e implementación de infraestructuras en la nube con AWS, Azure y Google Cloud. Optimización de costos y alta disponibilidad.
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Translations Script -->
+	<script is:inline>
+		const translations = {
+			en: {
+				services: {
+					hero: {
+						title: "SYSTEM CAPABILITIES",
+						terminal: "// Status: Online - Terminal Ready"
+					},
+					title: "SERVICES",
+					subtitle: "Custom digital solutions to boost your business",
+					card1: {
+						title: "FRONTEND FRAMEWORKS",
+						description: "Building modern, responsive interfaces with React, Vue, and Angular. Seamless user experiences with cutting-edge technologies."
+					},
+					card2: {
+						title: "BACKEND SYSTEMS",
+						description: "Developing robust server-side solutions with Node.js, Python, and databases. Ensuring scalability and performance for your applications."
+					},
+					card3: {
+						title: "CLOUD ARCHITECTURE",
+						description: "Designing and implementing cloud infrastructures with AWS, Azure, and Google Cloud. Cost optimization and high availability."
+					}
+				}
+			},
+			es: {
+				services: {
+					hero: {
+						title: "CAPACIDADES DEL SISTEMA",
+						terminal: "// Estado: En Línea - Terminal Lista"
+					},
+					title: "SERVICIOS",
+					subtitle: "Soluciones digitales a medida para impulsar tu negocio",
+					card1: {
+						title: "FRONTEND FRAMEWORKS",
+						description: "Construcción de interfaces modernas y responsivas con React, Vue y Angular. Experiencias de usuario fluidas con tecnologías de vanguardia."
+					},
+					card2: {
+						title: "BACKEND SYSTEMS",
+						description: "Desarrollo de soluciones robustas del lado del servidor con Node.js, Python y bases de datos. Garantizando escalabilidad y rendimiento para tus aplicaciones."
+					},
+					card3: {
+						title: "CLOUD ARCHITECTURE",
+						description: "Diseño e implementación de infraestructuras en la nube con AWS, Azure y Google Cloud. Optimización de costos y alta disponibilidad."
+					}
+				}
+			},
+			it: {
+				services: {
+					hero: {
+						title: "CAPACITÀ DEL SISTEMA",
+						terminal: "// Stato: Online - Terminale Pronto"
+					},
+					title: "SERVIZI",
+					subtitle: "Soluzioni digitali su misura per potenziare il tuo business",
+					card1: {
+						title: "FRONTEND FRAMEWORKS",
+						description: "Costruzione di interfacce moderne e responsive con React, Vue e Angular. Esperienze utente fluide con tecnologie all'avanguardia."
+					},
+					card2: {
+						title: "BACKEND SYSTEMS",
+						description: "Sviluppo di soluzioni robuste lato server con Node.js, Python e database. Garantendo scalabilità e prestazioni per le tue applicazioni."
+					},
+					card3: {
+						title: "CLOUD ARCHITECTURE",
+						description: "Progettazione e implementazione di infrastrutture cloud con AWS, Azure e Google Cloud. Ottimizzazione dei costi e alta disponibilità."
+					}
+				}
+			}
+		};
+
+		function updateContent() {
+			const lang = localStorage.getItem('language') || 'es';
+			const elements = document.querySelectorAll('[data-i18n]');
+			
+			elements.forEach(element => {
+				const key = element.getAttribute('data-i18n');
+				const keys = key.split('.');
+				let value = translations[lang];
+				
+				for (const k of keys) {
+					if (value && value[k]) {
+						value = value[k];
+					}
+				}
+				
+				if (typeof value === 'string') {
+					element.textContent = value;
+				}
+			});
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			updateContent();
+			
+			// Trigger fade-in effect for video
+			const video = document.getElementById('services-video');
+			if (video) {
+				setTimeout(() => {
+					video.classList.remove('opacity-0');
+					video.classList.add('opacity-100');
+				}, 100);
+			}
+		});
+	</script>
+</MainLayout>
