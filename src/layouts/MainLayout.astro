@@ -1,0 +1,202 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{title}</title>
+		<link rel="icon" type="image/png" href="/favicon.png">
+		<link rel="apple-touch-icon" href="/favicon.png">
+		<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Puritan:wght@400;700&family=Satisfy&display=swap" rel="stylesheet">
+	</head>
+	<body>
+	<!-- Header -->
+	<header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-transparent" style="background-color: transparent !important;">
+		<nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex justify-between items-center">
+			<a href="/" class="logo">
+				<span class="text-2xl sm:text-3xl font-bold" style="color: #d4006b; filter: drop-shadow(0 0 10px rgba(212, 0, 107, 0.8)); font-family: 'Puritan', sans-serif; letter-spacing: 0.05em;">
+					&lt;LGGM /&gt;
+				</span>
+			</a>
+			
+			<!-- Desktop Navigation -->
+			<ul class="hidden md:flex gap-8 lg:gap-10 text-3xl font-medium" style="font-family: 'League Gothic', Impact, sans-serif;">
+				<li><a href="/" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.home">Home</a></li>
+				<li><a href="/projects" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.projects">Projects</a></li>
+				<li><a href="/#services" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.services">Services</a></li>
+				<li><a href="/#certificates" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.certificates">Certificates</a></li>
+				<li><a href="/contact" class="text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" data-i18n="nav.contact">Contact</a></li>
+			</ul>
+
+			<!-- Language Switcher -->
+			<div class="hidden md:flex gap-3 items-center ml-8">
+				<button data-lang="es" class="lang-btn w-10 h-10 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-sm font-medium" title="Español">
+					ES
+				</button>
+				<button data-lang="en" class="lang-btn w-10 h-10 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-sm font-medium" title="English">
+					GB
+				</button>
+				<button data-lang="it" class="lang-btn w-10 h-10 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-sm font-medium" title="Italiano">
+					IT
+				</button>
+			</div>
+
+			<!-- Mobile Menu Button -->
+			<button class="md:hidden flex flex-col gap-1.5 group">
+				<span class="w-6 h-0.5 bg-[#ff007f] transition-all"></span>
+				<span class="w-6 h-0.5 bg-[#00f2ff] transition-all"></span>
+				<span class="w-6 h-0.5 bg-[#ff8c00] transition-all"></span>
+			</button>
+		</nav>
+	</header>
+
+	<!-- Main Content -->
+	<main>
+		<slot />
+	</main>
+
+	<!-- Footer -->
+	<footer class="relative py-6 px-4 bg-[#0b0b0f] border-t border-white/5">
+		<div class="container mx-auto text-center">
+			<p class="text-2xl text-gray-300" style="font-family: 'League Gothic', Impact, sans-serif;">
+				© 2026 LGGM.IS-A.DEV
+			</p>
+		</div>
+	</footer>
+
+<script>
+	// Translations object
+	const translations = {
+		en: {
+			pageTitle: 'LGGM - Digital Realities',
+			nav: {
+				home: 'Home',
+				projects: 'Projects',
+				services: 'Services',
+				certificates: 'Certificates',
+				contact: 'Contact'
+			}
+		},
+		es: {
+			pageTitle: 'LGGM - Realidades Digitales',
+			nav: {
+				home: 'Inicio',
+				projects: 'Proyectos',
+				services: 'Servicios',
+				certificates: 'Certificados',
+				contact: 'Contacto'
+			}
+		},
+		it: {
+			pageTitle: 'LGGM - Realtà Digitali',
+			nav: {
+				home: 'Home',
+				projects: 'Progetti',
+				services: 'Servizi',
+				certificates: 'Certificati',
+				contact: 'Contatto'
+			}
+		}
+	};
+
+	document.addEventListener('DOMContentLoaded', () => {
+		// Header scroll effect
+		const header = document.getElementById('header');
+		
+		if (header) {
+			window.addEventListener('scroll', () => {
+				const scrollY = window.scrollY;
+				
+				// Calculate opacity based on scroll position (0 to 300px)
+				const opacity = Math.min(scrollY / 300, 1);
+				
+				// Apply background with opacity
+				if (scrollY > 0) {
+					header.style.backgroundColor = 'rgba(11, 11, 15, ' + (opacity * 0.95) + ')';
+					header.style.backdropFilter = 'blur(' + (opacity * 16) + 'px)';
+					(header.style as any).webkitBackdropFilter = 'blur(' + (opacity * 16) + 'px)';
+				} else {
+					header.style.backgroundColor = 'transparent';
+					header.style.backdropFilter = 'none';
+					(header.style as any).webkitBackdropFilter = 'none';
+				}
+			});
+		}
+
+		// Language switcher functionality
+		let currentLang: 'en' | 'es' | 'it' = 'en'; // Default language
+
+		function setLanguage(lang: 'en' | 'es' | 'it') {
+			currentLang = lang;
+			localStorage.setItem('language', lang);
+			
+			// Update page title
+			if (translations[lang].pageTitle) {
+				document.title = translations[lang].pageTitle;
+			}
+			
+			// Update all elements with data-i18n attribute
+			const elements = document.querySelectorAll('[data-i18n]');
+			elements.forEach(element => {
+				const key = element.getAttribute('data-i18n');
+				if (!key) return;
+				
+				const keys = key.split('.');
+				let translation: any = translations[lang];
+				
+				// Navigate through nested object
+				for (let i = 0; i < keys.length; i++) {
+					if (translation && translation[keys[i]] !== undefined) {
+						translation = translation[keys[i]];
+					} else {
+						translation = null;
+						break;
+					}
+				}
+				
+				// Update innerHTML to support line breaks
+				if (translation) {
+					element.innerHTML = translation;
+				}
+			});
+
+			// Update active button border
+			const langButtons = document.querySelectorAll('.lang-btn');
+			langButtons.forEach(btn => {
+				if (btn.getAttribute('data-lang') === lang) {
+					btn.classList.remove('border-gray-400');
+					btn.classList.add('border-[#d4006b]');
+				} else {
+					btn.classList.remove('border-[#d4006b]');
+					btn.classList.add('border-gray-400');
+				}
+			});
+		}
+
+		// Initialize language from localStorage or default to 'en'
+		const savedLang = (localStorage.getItem('language') as 'en' | 'es' | 'it') || 'en';
+		setLanguage(savedLang);
+
+		// Add click event to language buttons
+		const langButtons = document.querySelectorAll('.lang-btn');
+		langButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				const lang = button.getAttribute('data-lang');
+				if (lang && (lang === 'en' || lang === 'es' || lang === 'it')) {
+					localStorage.setItem('language', lang);
+					window.location.reload();
+				}
+			});
+		});
+	});
+</script>	</body>
+</html>

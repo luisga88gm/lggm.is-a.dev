@@ -1,17 +1,251 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="LGGM - Digital Realities">
+
+	<!-- Hero Section -->
+	<section id="home" class="relative w-full h-screen overflow-hidden">
+		<!-- Background Video/Image - Full Viewport -->
+		<div class="absolute inset-0 w-full h-full">
+			<!-- Video con fallback a imagen -->
+			<video 
+				autoplay 
+				loop 
+				muted 
+				playsinline
+				preload="auto"
+				class="w-full h-full object-cover"
+				style="opacity: 0; transition: opacity 0.5s ease-in;"
+				onloadeddata="this.style.opacity='1'"
+			>
+				<source src="/images/hero_animado.mp4" type="video/mp4">
+			</video>
+			<!-- Fallback: Imagen estática -->
+			<img 
+				src="/images/hero.png" 
+				alt="Lofi train atmosphere" 
+				class="w-full h-full object-cover"
+			/>
+			<!-- Dark Gradient Overlay - Optimizado para legibilidad -->
+			<div class="absolute inset-0 bg-gradient-to-b from-[#0b0b0f]/80 via-[#0b0b0f]/60 to-[#0b0b0f]/90"></div>
+		</div>
+
+		<!-- Content - Over Video -->
+		<div class="absolute inset-0 z-20 flex items-center pt-20 sm:pt-24">
+			<div class="w-full px-4 sm:px-6 lg:px-12">
+				<div class="w-full">
+			<h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase mb-4 sm:mb-6 text-white" style="font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.02em; line-height: 0.85;" data-i18n="hero.title">
+						CRAFTING DIGITAL<br>
+						REALITIES
+					</h1>
+					
+				<p class="text-2xl sm:text-3xl md:text-4xl mb-8 sm:mb-10" style="font-family: 'Satisfy', cursive; color: #ff007f;" data-i18n="hero.subtitle">
+				From lines of code to luminous landscapes
+			</p>	
+					<div class="flex flex-col sm:flex-row gap-4">
+						<!-- Button 1: Solid Pink -->
+					<button class="px-10 py-2 text-black text-2xl sm:text-3xl uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,0,127,0.6)] hover:scale-105" style="background-color: #d4006b; font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.1em; border-radius: 9999px;" data-i18n="hero.button1">
+						VIEW PROJECTS
+					</button>
+					<!-- Button 2: Solid Cyan -->
+					<button class="px-10 py-2 text-black text-2xl sm:text-3xl uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,242,255,0.6)] hover:scale-105" style="background-color: #00c7d4; font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.1em; border-radius: 9999px;" data-i18n="hero.button2">
+							LET'S CONNECT
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scroll Indicator -->
+		<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce hidden sm:block">
+			<svg class="w-6 h-6 text-[#00f2ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+			</svg>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section id="services" class="relative py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#0b0b0f]">
+		<div class="container mx-auto max-w-7xl">
+			<h2 class="text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-12 sm:mb-16 text-center" style="font-family: 'League Gothic', Impact, sans-serif;">
+				<span class="text-[#ff007f]" data-i18n="services.title">SERVICES</span>
+			</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<!-- Card 1 - Frontend Frameworks (Cyan) -->
+			<div class="group relative bg-[#1a1a2e]/80 backdrop-blur-sm p-8 rounded-3xl border-2 border-[#00f2ff] transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,242,255,0.5)] hover:-translate-y-2">
+				<div class="mb-6 flex justify-center">
+					<svg class="w-16 h-16 text-[#ff007f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+					</svg>
+				</div>
+				<h3 class="text-3xl font-sans font-bold mb-3 text-[#ff007f] text-center" data-i18n="services.card1.title">
+					Frontend Frameworks
+				</h3>
+				<p class="text-gray-400 leading-relaxed text-xs text-center" data-i18n="services.card1.description">
+					Building modern, responsive interfaces with React, Vue, and Angular. Creating seamless user experiences with cutting-edge technologies.
+				</div>
+
+				<!-- Card 2 - Backend Systems (Pink) -->
+			<div class="group relative bg-[#1a1a2e]/80 backdrop-blur-sm p-8 rounded-3xl border-2 border-[#ff007f] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,0,127,0.5)] hover:-translate-y-2">
+				<div class="mb-6 flex justify-center">
+					<svg class="w-16 h-16 text-[#ff007f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+					</svg>
+				</div>
+				<h3 class="text-3xl font-sans font-bold mb-3 text-[#ff007f] text-center" data-i18n="services.card2.title">
+					Backend Systems
+				</h3>
+				<p class="text-gray-400 leading-relaxed text-xs text-center" data-i18n="services.card2.description">
+					Developing robust server-side solutions with Node.js, Python, and databases. Ensuring scalability and performance for your applications.
+				</div>
+
+				<!-- Card 3 - Cloud & Deployment (Cyan) -->
+			<div class="group relative bg-[#1a1a2e]/80 backdrop-blur-sm p-8 rounded-3xl border-2 border-[#00f2ff] transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,242,255,0.5)] hover:-translate-y-2">
+				<div class="mb-6 flex justify-center">
+					<svg class="w-16 h-16 text-[#ff007f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+					</svg>
+				</div>
+				<h3 class="text-3xl font-sans font-bold mb-3 text-[#ff007f] text-center" data-i18n="services.card3.title">
+					Cloud & Deployment
+				</h3>
+				<p class="text-gray-400 leading-relaxed text-xs text-center" data-i18n="services.card3.description">
+					Deploying applications to AWS, Azure, and Google Cloud. Implementing CI/CD pipelines and ensuring high availability for your services.
+					</p>
+				</div>
+			</div>
+		</div>
+</MainLayout>
+
+<script>
+	// Translations object
+	const translations = {
+		en: {
+			hero: {
+				title: 'CRAFTING DIGITAL<br>REALITIES',
+				subtitle: 'From lines of code to luminous landscapes',
+				button1: 'VIEW PROJECTS',
+				button2: "LET'S CONNECT"
+			},
+			services: {
+				title: 'SERVICES',
+				card1: {
+					title: 'Frontend Frameworks',
+					description: 'Building modern, responsive interfaces with React, Vue, and Angular. Creating seamless user experiences with cutting-edge technologies.'
+				},
+				card2: {
+					title: 'Backend Systems',
+					description: 'Developing robust server-side solutions with Node.js, Python, and databases. Ensuring scalability and performance for your applications.'
+				},
+				card3: {
+					title: 'Cloud & Deployment',
+					description: 'Deploying applications to AWS, Azure, and Google Cloud. Implementing CI/CD pipelines and ensuring high availability for your services.'
+				}
+			}
+		},
+		es: {
+			hero: {
+				title: 'CREANDO REALIDADES<br>DIGITALES',
+				subtitle: 'De líneas de código a paisajes luminosos',
+				button1: 'VER PROYECTOS',
+				button2: 'CONECTEMOS'
+			},
+			services: {
+				title: 'SERVICIOS',
+				card1: {
+					title: 'Frameworks Frontend',
+					description: 'Construyendo interfaces modernas y responsivas con React, Vue y Angular. Creando experiencias de usuario fluidas con tecnologías de vanguardia.'
+				},
+				card2: {
+					title: 'Sistemas Backend',
+					description: 'Desarrollando soluciones robustas del lado del servidor con Node.js, Python y bases de datos. Garantizando escalabilidad y rendimiento para tus aplicaciones.'
+				},
+				card3: {
+					title: 'Nube & Despliegue',
+					description: 'Desplegando aplicaciones en AWS, Azure y Google Cloud. Implementando pipelines CI/CD y asegurando alta disponibilidad para tus servicios.'
+				}
+			}
+		},
+		it: {
+			hero: {
+				title: 'CREANDO REALTÀ<br>DIGITALI',
+				subtitle: 'Da linee di codice a paesaggi luminosi',
+				button1: 'VEDI PROGETTI',
+				button2: 'CONNETTIAMOCI'
+			},
+			services: {
+				title: 'SERVIZI',
+				card1: {
+					title: 'Framework Frontend',
+					description: 'Costruendo interfacce moderne e responsive con React, Vue e Angular. Creando esperienze utente fluide con tecnologie all\'avanguardia.'
+				},
+				card2: {
+					title: 'Sistemi Backend',
+					description: 'Sviluppando soluzioni robuste lato server con Node.js, Python e database. Garantendo scalabilità e prestazioni per le tue applicazioni.'
+				},
+				card3: {
+					title: 'Cloud & Deployment',
+					description: 'Distribuendo applicazioni su AWS, Azure e Google Cloud. Implementando pipeline CI/CD e garantendo alta disponibilità per i tuoi servizi.'
+				}
+			}
+		}
+	};
+
+	document.addEventListener('DOMContentLoaded', () => {
+		// Language switcher functionality
+		let currentLang: 'en' | 'es' | 'it' = 'en'; // Default language
+
+		function setLanguage(lang: 'en' | 'es' | 'it') {
+			currentLang = lang;
+			localStorage.setItem('language', lang);
+			
+			// Update all elements with data-i18n attribute (scoped to this page)
+			const elements = document.querySelectorAll('[data-i18n]');
+			elements.forEach(element => {
+				const key = element.getAttribute('data-i18n');
+				if (!key) return;
+				
+				const keys = key.split('.');
+				let translation: any = translations[lang];
+				
+				// Navigate through nested object
+				for (let i = 0; i < keys.length; i++) {
+					if (translation && translation[keys[i]] !== undefined) {
+						translation = translation[keys[i]];
+					} else {
+						translation = null;
+						break;
+					}
+				}
+				
+				// Update innerHTML to support line breaks
+				if (translation) {
+					element.innerHTML = translation;
+				}
+			});
+		}
+
+		// Initialize language from localStorage or default to 'en'
+		const savedLang = (localStorage.getItem('language') as 'en' | 'es' | 'it') || 'en';
+		setLanguage(savedLang);
+	});
+</script>
+
+<style>
+	/* Smooth animations */
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	section {
+		animation: fadeIn 0.8s ease-out;
+	}
+
+	/* Enhanced glow effect on hover */
+	button:hover {
+		transform: translateY(-2px);
+	}
+</style>

@@ -1,0 +1,264 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+// Datos de ejemplo de proyectos
+const projects = [
+	{
+		id: 1,
+		title: 'E-Commerce Platform',
+		description: 'Full-stack e-commerce solution with real-time inventory management and payment processing.',
+		technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+		borderColor: 'cyan'
+	},
+	{
+		id: 2,
+		title: 'AI Chat Application',
+		description: 'Real-time chat application with AI-powered message suggestions and sentiment analysis.',
+		technologies: ['Vue.js', 'Python', 'TensorFlow', 'WebSocket'],
+		borderColor: 'pink'
+	},
+	{
+		id: 3,
+		title: 'Portfolio Dashboard',
+		description: 'Interactive dashboard for tracking cryptocurrency portfolio with live market data.',
+		technologies: ['Next.js', 'TypeScript', 'Chart.js', 'API'],
+		borderColor: 'cyan'
+	},
+	{
+		id: 4,
+		title: 'Social Media Analytics',
+		description: 'Analytics platform for social media metrics with custom reporting and visualization.',
+		technologies: ['Angular', 'Express', 'PostgreSQL', 'D3.js'],
+		borderColor: 'pink'
+	},
+	{
+		id: 5,
+		title: 'Task Management System',
+		description: 'Collaborative task management platform with team workflows and project tracking.',
+		technologies: ['Svelte', 'FastAPI', 'Redis', 'Docker'],
+		borderColor: 'cyan'
+	},
+	{
+		id: 6,
+		title: 'Video Streaming Platform',
+		description: 'High-performance video streaming service with adaptive quality and CDN integration.',
+		technologies: ['React', 'AWS', 'HLS', 'CloudFront'],
+		borderColor: 'pink'
+	}
+];
+---
+
+<MainLayout title="Projects - LGGM">
+	<!-- Projects Hero -->
+	<section class="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#0b0b0f]">
+		<div class="container mx-auto max-w-7xl">
+			<h1 class="text-6xl sm:text-7xl lg:text-8xl uppercase mb-6 text-center" style="font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.02em;">
+				<span class="text-[#ff007f]" data-i18n="projects.title">MY PROJECTS</span>
+			</h1>
+			<p class="text-xl sm:text-2xl text-gray-400 text-center max-w-3xl mx-auto mb-12" data-i18n="projects.subtitle">
+				A showcase of digital experiences crafted with passion and precision
+			</p>
+		</div>
+	</section>
+
+	<!-- Projects Grid -->
+	<section class="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#0b0b0f]">
+		<div class="container mx-auto max-w-7xl">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{projects.map((project) => (
+					<article class={`group relative bg-[#1a1a2e]/80 backdrop-blur-sm rounded-3xl border-2 ${project.borderColor === 'cyan' ? 'border-[#00f2ff]' : 'border-[#ff007f]'} transition-all duration-500 hover:shadow-[0_0_30px_${project.borderColor === 'cyan' ? 'rgba(0,242,255,0.5)' : 'rgba(255,0,127,0.5)'}] hover:-translate-y-2 overflow-hidden`}>
+						<!-- Project Image -->
+						<div class="relative h-56 bg-gradient-to-br from-[#1a1a2e] to-[#0b0b0f] overflow-hidden">
+							<div class="absolute inset-0 flex items-center justify-center">
+								<svg class="w-24 h-24 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							</div>
+							<!-- Gradient Overlay -->
+							<div class={`absolute inset-0 bg-gradient-to-t ${project.borderColor === 'cyan' ? 'from-[#00f2ff]/20' : 'from-[#ff007f]/20'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+						</div>
+
+						<!-- Project Content -->
+						<div class="p-6">
+							<h3 class="text-3xl font-bold mb-3 text-[#ff007f]" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n={`projects.card${project.id}.title`}>
+								{project.title}
+							</h3>
+							<p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n={`projects.card${project.id}.description`}>
+								{project.description}
+							</p>
+
+							<!-- Technologies -->
+							<div class="flex flex-wrap gap-2 mb-4">
+								{project.technologies.map((tech) => (
+									<span class={`px-3 py-1 text-xs rounded-full ${project.borderColor === 'cyan' ? 'bg-[#00f2ff]/10 text-[#00f2ff] border border-[#00f2ff]/30' : 'bg-[#ff007f]/10 text-[#ff007f] border border-[#ff007f]/30'}`}>
+										{tech}
+									</span>
+								))}
+							</div>
+
+							<!-- View Project Button -->
+							<button class={`w-full px-6 py-2 text-black text-lg uppercase transition-all duration-300 hover:scale-105 ${project.borderColor === 'cyan' ? 'bg-[#00c7d4] hover:shadow-[0_0_20px_rgba(0,242,255,0.5)]' : 'bg-[#d4006b] hover:shadow-[0_0_20px_rgba(255,0,127,0.5)]'}`} style="font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.1em; border-radius: 9999px;" data-i18n="projects.viewButton">
+								VIEW PROJECT
+							</button>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	// Translations object for projects page
+	const translations = {
+		en: {
+			projects: {
+				title: 'MY PROJECTS',
+				subtitle: 'A showcase of digital experiences crafted with passion and precision',
+				viewButton: 'VIEW PROJECT',
+				card1: {
+					title: 'E-Commerce Platform',
+					description: 'Full-stack e-commerce solution with real-time inventory management and payment processing.'
+				},
+				card2: {
+					title: 'AI Chat Application',
+					description: 'Real-time chat application with AI-powered message suggestions and sentiment analysis.'
+				},
+				card3: {
+					title: 'Portfolio Dashboard',
+					description: 'Interactive dashboard for tracking cryptocurrency portfolio with live market data.'
+				},
+				card4: {
+					title: 'Social Media Analytics',
+					description: 'Analytics platform for social media metrics with custom reporting and visualization.'
+				},
+				card5: {
+					title: 'Task Management System',
+					description: 'Collaborative task management platform with team workflows and project tracking.'
+				},
+				card6: {
+					title: 'Video Streaming Platform',
+					description: 'High-performance video streaming service with adaptive quality and CDN integration.'
+				}
+			}
+		},
+		es: {
+			projects: {
+				title: 'MIS PROYECTOS',
+				subtitle: 'Una muestra de experiencias digitales creadas con pasión y precisión',
+				viewButton: 'VER PROYECTO',
+				card1: {
+					title: 'Plataforma E-Commerce',
+					description: 'Solución e-commerce full-stack con gestión de inventario en tiempo real y procesamiento de pagos.'
+				},
+				card2: {
+					title: 'Aplicación de Chat IA',
+					description: 'Aplicación de chat en tiempo real con sugerencias de mensajes y análisis de sentimientos impulsados por IA.'
+				},
+				card3: {
+					title: 'Dashboard de Portfolio',
+					description: 'Panel interactivo para rastrear portfolio de criptomonedas con datos de mercado en vivo.'
+				},
+				card4: {
+					title: 'Análisis de Redes Sociales',
+					description: 'Plataforma de análisis para métricas de redes sociales con reportes personalizados y visualización.'
+				},
+				card5: {
+					title: 'Sistema de Gestión de Tareas',
+					description: 'Plataforma colaborativa de gestión de tareas con flujos de trabajo en equipo y seguimiento de proyectos.'
+				},
+				card6: {
+					title: 'Plataforma de Streaming',
+					description: 'Servicio de streaming de video de alto rendimiento con calidad adaptativa e integración CDN.'
+				}
+			}
+		},
+		it: {
+			projects: {
+				title: 'I MIEI PROGETTI',
+				subtitle: 'Una vetrina di esperienze digitali create con passione e precisione',
+				viewButton: 'VEDI PROGETTO',
+				card1: {
+					title: 'Piattaforma E-Commerce',
+					description: 'Soluzione e-commerce full-stack con gestione inventario in tempo reale e elaborazione pagamenti.'
+				},
+				card2: {
+					title: 'Applicazione Chat IA',
+					description: 'Applicazione di chat in tempo reale con suggerimenti di messaggi e analisi del sentiment basati su IA.'
+				},
+				card3: {
+					title: 'Dashboard Portfolio',
+					description: 'Dashboard interattiva per tracciare il portfolio di criptovalute con dati di mercato in tempo reale.'
+				},
+				card4: {
+					title: 'Analytics Social Media',
+					description: 'Piattaforma di analisi per metriche dei social media con report personalizzati e visualizzazione.'
+				},
+				card5: {
+					title: 'Sistema Gestione Attività',
+					description: 'Piattaforma collaborativa di gestione attività con flussi di lavoro di team e tracciamento progetti.'
+				},
+				card6: {
+					title: 'Piattaforma Streaming Video',
+					description: 'Servizio di streaming video ad alte prestazioni con qualità adattiva e integrazione CDN.'
+				}
+			}
+		}
+	};
+
+	document.addEventListener('DOMContentLoaded', () => {
+		// Language switcher functionality
+		let currentLang: 'en' | 'es' | 'it' = 'en';
+
+		function setLanguage(lang: 'en' | 'es' | 'it') {
+			currentLang = lang;
+			localStorage.setItem('language', lang);
+			
+			// Update all elements with data-i18n attribute
+			const elements = document.querySelectorAll('[data-i18n]');
+			elements.forEach(element => {
+				const key = element.getAttribute('data-i18n');
+				if (!key) return;
+				
+				const keys = key.split('.');
+				let translation: any = (translations as any)[lang];
+				
+				// Navigate through nested object
+				for (let i = 0; i < keys.length; i++) {
+					if (translation && translation[keys[i]] !== undefined) {
+						translation = translation[keys[i]];
+					} else {
+						translation = null;
+						break;
+					}
+				}
+				
+				// Update innerHTML to support line breaks
+				if (translation) {
+					element.innerHTML = translation;
+				}
+			});
+		}
+
+		// Initialize language from localStorage or default to 'en'
+		const savedLang = (localStorage.getItem('language') as 'en' | 'es' | 'it') || 'en';
+		setLanguage(savedLang);
+	});
+</script>
+
+<style>
+	/* Smooth animations */
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	section {
+		animation: fadeIn 0.8s ease-out;
+	}
+
+	/* Card hover effects */
+	article {
+		will-change: transform;
+	}
+</style>

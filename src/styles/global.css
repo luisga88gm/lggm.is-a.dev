@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Variables CSS Globales */
+:root {
+	/* Colores principales */
+	--color-pink: #ff007f;
+	--color-pink-dark: #d4006b;
+	--color-cyan: #00f2ff;
+	--color-cyan-dark: #00c7d4;
+	--color-orange: #ff8c00;
+	
+	/* Backgrounds */
+	--bg-dark: #0b0b0f;
+	--bg-card: #1a1a2e;
+	
+	/* Sombras de colores */
+	--shadow-pink: 0 0 30px rgba(255, 0, 127, 0.5);
+	--shadow-cyan: 0 0 30px rgba(0, 242, 255, 0.5);
+	--shadow-pink-strong: 0 0 50px rgba(255, 0, 127, 0.8);
+	--shadow-cyan-strong: 0 0 50px rgba(0, 242, 255, 0.8);
+}
+
+/* Scrollbar con gradiente */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #0b0b0f;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg, #ff007f, #00f2ff, #ff8c00);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(180deg, #d4006b, #00c7d4, #ff7700);
+}
