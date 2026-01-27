@@ -13,9 +13,37 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
+		<meta name="title" content={title}>
+		<meta name="description" content="Full-stack developer crafting digital realities with Astro, React, and modern web technologies. Cyberpunk portfolio showcasing projects with neon aesthetics and cutting-edge code.">
+		<meta name="keywords" content="full-stack developer, web developer, Astro, React, Tailwind CSS, portfolio, cyberpunk design, neon aesthetics, JavaScript, TypeScript, frontend, backend">
+		<meta name="author" content="LGGM">
+		<meta name="robots" content="index, follow">
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://lggm.is-a.dev">
+		
+		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="/favicon.png">
 		<link rel="apple-touch-icon" href="/favicon.png">
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://lggm.is-a.dev">
+		<meta property="og:title" content="LGGM | Digital Realities">
+		<meta property="og:description" content="Full-stack developer specializing in modern web technologies. Explore my cyberpunk-styled portfolio featuring innovative projects with Astro, React, and Tailwind CSS.">
+		<meta property="og:image" content="https://lggm.is-a.dev/images/hero.png">
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://lggm.is-a.dev">
+		<meta property="twitter:title" content="LGGM | Digital Realities">
+		<meta property="twitter:description" content="Full-stack developer specializing in modern web technologies. Explore my cyberpunk-styled portfolio featuring innovative projects with Astro, React, and Tailwind CSS.">
+		<meta property="twitter:image" content="https://lggm.is-a.dev/images/hero.png">
+		
+		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Puritan:wght@400;700&family=Satisfy&display=swap" rel="stylesheet">
 	</head>
 	<body>
