@@ -15,7 +15,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 				muted 
 				playsinline
 				preload="auto"
-				class="w-full h-full object-cover"
+				class="absolute inset-0 w-full h-full object-cover z-10"
 				style="opacity: 0; transition: opacity 0.5s ease-in;"
 				onloadeddata="this.style.opacity='1'"
 			>
@@ -25,10 +25,10 @@ import MainLayout from '../layouts/MainLayout.astro';
 			<img 
 				src="/images/hero.png" 
 				alt="Lofi train atmosphere" 
-				class="w-full h-full object-cover"
+				class="absolute inset-0 w-full h-full object-cover z-0"
 			/>
 			<!-- Dark Gradient Overlay - Optimizado para legibilidad -->
-			<div class="absolute inset-0 bg-linear-to-b from-[#0b0b0f]/80 via-[#0b0b0f]/60 to-[#0b0b0f]/90"></div>
+			<div class="absolute inset-0 bg-linear-to-b from-[#0b0b0f]/80 via-[#0b0b0f]/60 to-[#0b0b0f]/90 z-10"></div>
 		</div>
 
 		<!-- Content - Over Video -->
@@ -66,9 +66,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 	</section>
 
 	<!-- Services Section -->
-	<section id="services" class="relative py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#0b0b0f]">
+	<section id="services" class="relative pt-0 pb-6 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#0b0b0f] -mt-40 sm:mt-0 z-30 sm:z-auto">
 		<div class="container mx-auto max-w-7xl">
-			<h2 class="text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-12 sm:mb-16 text-center" style="font-family: 'League Gothic', Impact, sans-serif;">
+			<h2 class="text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-2 sm:mb-12 lg:mb-16 text-center" style="font-family: 'League Gothic', Impact, sans-serif;">
 				<span class="text-[#ff007f]" data-i18n="services.title">SERVICES</span>
 			</h2>
 			

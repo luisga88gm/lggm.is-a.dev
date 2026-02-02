@@ -4,7 +4,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <MainLayout title="Services | LGGM">
 	<!-- Hero Section with Video -->
-	<section class="relative h-screen overflow-hidden bg-[#0b0b0f]">
+	<section class="relative h-[50vh] sm:h-[70vh] lg:h-screen overflow-hidden bg-[#0b0b0f]">
 		<!-- Video Background -->
 		<video 
 			id="services-video"
@@ -39,10 +39,10 @@ import MainLayout from '../layouts/MainLayout.astro';
 	</section>
 
 	<!-- Services Section -->
-	<section class="relative min-h-screen bg-[#0b0b0f] pt-32 pb-20 px-6 sm:px-8 lg:px-12">
+	<section class="relative min-h-screen bg-[#0b0b0f] pt-0 sm:pt-16 lg:pt-32 pb-6 sm:pb-20 px-6 sm:px-8 lg:px-12">
 		<div class="container mx-auto max-w-7xl">
 			<!-- Header -->
-			<div class="text-center mb-20">
+			<div class="text-center mb-2 sm:mb-12 lg:mb-20">
 				<h2 class="text-6xl sm:text-7xl md:text-8xl font-bold mb-6 uppercase" 
 					style="font-family: 'League Gothic', Impact, sans-serif; 
 					background: linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%); 
@@ -69,8 +69,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
 						</svg>
 					</div>
-					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#00f2ff]" style="font-family: 'League Gothic', Impact, sans-serif;">FRONTEND FRAMEWORKS</h3>
-					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base">Construcción de interfaces modernas y responsivas con React, Vue y Angular. Experiencias de usuario fluidas con tecnologías de vanguardia.</p>
+					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#00f2ff]" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="services.card1.title">FRONTEND FRAMEWORKS</h3>
+					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base" data-i18n="services.card1.description">Building modern, responsive interfaces with React, Vue, and Angular. Creating seamless user experiences with cutting-edge technologies.</p>
 				</div>
 
 				<!-- Service Card 2: Backend Systems -->
@@ -82,8 +82,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
 						</svg>
 					</div>
-					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#ff007f]" style="font-family: 'League Gothic', Impact, sans-serif;">BACKEND SYSTEMS</h3>
-					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base">Desarrollo de soluciones robustas del lado del servidor con Node.js, Python y bases de datos. Garantizando escalabilidad y rendimiento para tus aplicaciones.</p>
+					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#ff007f]" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="services.card2.title">BACKEND SYSTEMS</h3>
+					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base" data-i18n="services.card2.description">Developing robust server-side solutions with Node.js, Python, and databases. Ensuring scalability and performance for your applications.</p>
 				</div>
 
 				<!-- Service Card 3: Cloud Architecture -->
@@ -95,8 +95,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
 						</svg>
 					</div>
-					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#00f2ff]" style="font-family: 'League Gothic', Impact, sans-serif;">CLOUD ARCHITECTURE</h3>
-					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base">Diseño e implementación de infraestructuras en la nube con AWS, Azure y Google Cloud. Optimización de costos y alta disponibilidad.</p>
+					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#00f2ff]" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="services.card3.title">CLOUD ARCHITECTURE</h3>
+					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base" data-i18n="services.card3.description">Design and implementation of cloud infrastructures with AWS, Azure, and Google Cloud. Cost optimization and high availability.</p>
 				</div>
 
 				<!-- Service Card 4: ERP Systems (PINK) -->
@@ -110,8 +110,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 							<path d="M8 16l-2 2m10-2l2 2" stroke-width="1.5"/>
 						</svg>
 					</div>
-					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#ff007f]" style="font-family: 'League Gothic', Impact, sans-serif;">ERP SYSTEMS</h3>
-					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base">Implementación y personalización de sistemas ERP para optimizar procesos empresariales, inventarios y recursos humanos.</p>
+					<h3 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-[#ff007f]" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="services.card4.title">ERP SYSTEMS</h3>
+					<p class="text-gray-300 leading-relaxed text-center text-sm sm:text-base" data-i18n="services.card4.description">Implementation and customization of ERP systems to optimize business processes, inventory, and human resources.</p>
 				</div>
 
 				<!-- Service Card 5: Android App Developing (CYAN) -->
@@ -126,8 +126,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 							</g>
 						</svg>
 					</div>
-					<h3 class="text-3xl font-bold mb-4 text-center text-[#00f2ff]" style="font-family: 'League Gothic', Impact, sans-serif;">ANDROID APP DEVELOPING</h3>
-					<p class="text-gray-300 leading-relaxed text-center text-base">Native and cross-platform Android app development, integrating modern features and optimized user experience.</p>
+					<h3 class="text-3xl font-bold mb-4 text-center text-[#00f2ff]" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="services.card5.title">ANDROID APP DEVELOPING</h3>
+					<p class="text-gray-300 leading-relaxed text-center text-base" data-i18n="services.card5.description">Native and cross-platform Android app development, integrating modern features and optimized user experience.</p>
 				</div>
 
 				<!-- Service Card 6: UX/UI Improvement (PINK) -->
@@ -140,8 +140,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 							</g>
 						</svg>
 					</div>
-					<h3 class="text-3xl font-bold mb-4 text-center text-[#ff007f]" style="font-family: 'League Gothic', Impact, sans-serif;">UX/UI IMPROVEMENT</h3>
-					<p class="text-gray-300 leading-relaxed text-center text-base">User experience and interface improvement for digital products, focused on usability, accessibility, and attractive design.</p>
+					<h3 class="text-3xl font-bold mb-4 text-center text-[#ff007f]" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="services.card6.title">UX/UI IMPROVEMENT</h3>
+					<p class="text-gray-300 leading-relaxed text-center text-base" data-i18n="services.card6.description">User experience and interface improvement for digital products, focused on usability, accessibility, and attractive design.</p>
 				</div>
 			</div>
 			</div>
@@ -149,16 +149,6 @@ import MainLayout from '../layouts/MainLayout.astro';
 	<!-- Traducciones y scripts al final del archivo -->
 	<script>
 	const translations = {
-	  es: {
-		services: {
-		  hero: {
-			title: "CAPACIDADES DEL SISTEMA",
-			terminal: "// Estado: Online - Terminal Listo"
-		  },
-		  title: "SERVICIOS",
-		  subtitle: "Soluciones digitales a medida para impulsar tu negocio"
-		}
-	  },
 	  en: {
 		services: {
 		  hero: {
@@ -166,7 +156,65 @@ import MainLayout from '../layouts/MainLayout.astro';
 			terminal: "// Status: Online - Terminal Ready"
 		  },
 		  title: "SERVICES",
-		  subtitle: "Custom digital solutions to boost your business"
+		  subtitle: "Custom digital solutions to boost your business",
+		  card1: {
+			title: "FRONTEND FRAMEWORKS",
+			description: "Building modern, responsive interfaces with React, Vue, and Angular. Creating seamless user experiences with cutting-edge technologies."
+		  },
+		  card2: {
+			title: "BACKEND SYSTEMS",
+			description: "Developing robust server-side solutions with Node.js, Python, and databases. Ensuring scalability and performance for your applications."
+		  },
+		  card3: {
+			title: "CLOUD ARCHITECTURE",
+			description: "Design and implementation of cloud infrastructures with AWS, Azure, and Google Cloud. Cost optimization and high availability."
+		  },
+		  card4: {
+			title: "ERP SYSTEMS",
+			description: "Implementation and customization of ERP systems to optimize business processes, inventory, and human resources."
+		  },
+		  card5: {
+			title: "ANDROID APP DEVELOPING",
+			description: "Native and cross-platform Android app development, integrating modern features and optimized user experience."
+		  },
+		  card6: {
+			title: "UX/UI IMPROVEMENT",
+			description: "User experience and interface improvement for digital products, focused on usability, accessibility, and attractive design."
+		  }
+		}
+	  },
+	  es: {
+		services: {
+		  hero: {
+			title: "CAPACIDADES DEL SISTEMA",
+			terminal: "// Estado: Online - Terminal Listo"
+		  },
+		  title: "SERVICIOS",
+		  subtitle: "Soluciones digitales a medida para impulsar tu negocio",
+		  card1: {
+			title: "FRAMEWORKS FRONTEND",
+			description: "Construcción de interfaces modernas y responsivas con React, Vue y Angular. Experiencias de usuario fluidas con tecnologías de vanguardia."
+		  },
+		  card2: {
+			title: "SISTEMAS BACKEND",
+			description: "Desarrollo de soluciones robustas del lado del servidor con Node.js, Python y bases de datos. Garantizando escalabilidad y rendimiento para tus aplicaciones."
+		  },
+		  card3: {
+			title: "ARQUITECTURA EN LA NUBE",
+			description: "Diseño e implementación de infraestructuras en la nube con AWS, Azure y Google Cloud. Optimización de costos y alta disponibilidad."
+		  },
+		  card4: {
+			title: "SISTEMAS ERP",
+			description: "Implementación y personalización de sistemas ERP para optimizar procesos empresariales, inventarios y recursos humanos."
+		  },
+		  card5: {
+			title: "DESARROLLO DE APPS ANDROID",
+			description: "Desarrollo de aplicaciones Android nativas y multiplataforma, integrando funciones modernas y experiencia de usuario optimizada."
+		  },
+		  card6: {
+			title: "MEJORA UX/UI",
+			description: "Mejora de experiencia de usuario e interfaz para productos digitales, enfocado en usabilidad, accesibilidad y diseño atractivo."
+		  }
 		}
 	  },
 	  it: {
@@ -176,13 +224,37 @@ import MainLayout from '../layouts/MainLayout.astro';
 			terminal: "// Stato: Online - Terminale Pronto"
 		  },
 		  title: "SERVIZI",
-		  subtitle: "Soluzioni digitali su misura per potenziare il tuo business"
+		  subtitle: "Soluzioni digitali su misura per potenziare il tuo business",
+		  card1: {
+			title: "FRAMEWORK FRONTEND",
+			description: "Costruzione di interfacce moderne e responsive con React, Vue e Angular. Creazione di esperienze utente fluide con tecnologie all'avanguardia."
+		  },
+		  card2: {
+			title: "SISTEMI BACKEND",
+			description: "Sviluppo di soluzioni robuste lato server con Node.js, Python e database. Garantendo scalabilità e prestazioni per le tue applicazioni."
+		  },
+		  card3: {
+			title: "ARCHITETTURA CLOUD",
+			description: "Progettazione e implementazione di infrastrutture cloud con AWS, Azure e Google Cloud. Ottimizzazione dei costi e alta disponibilità."
+		  },
+		  card4: {
+			title: "SISTEMI ERP",
+			description: "Implementazione e personalizzazione di sistemi ERP per ottimizzare processi aziendali, inventario e risorse umane."
+		  },
+		  card5: {
+			title: "SVILUPPO APP ANDROID",
+			description: "Sviluppo di app Android native e multipiattaforma, integrando funzionalità moderne ed esperienza utente ottimizzata."
+		  },
+		  card6: {
+			title: "MIGLIORAMENTO UX/UI",
+			description: "Miglioramento dell'esperienza utente e dell'interfaccia per prodotti digitali, focalizzato su usabilità, accessibilità e design attraente."
+		  }
 		}
 	  }
 	};
 
 		function updateContent() {
-			const lang = (localStorage.getItem('language') || 'es');
+			const lang = (localStorage.getItem('language') || 'en');
 			const elements = document.querySelectorAll('[data-i18n]');
 			elements.forEach(element => {
 				const key = element.getAttribute('data-i18n');

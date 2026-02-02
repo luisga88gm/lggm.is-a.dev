@@ -27,6 +27,23 @@ html {
 
 body {
 	background-color: #0b0b0f;
+	overflow-x: hidden; /* Prevenir scroll horizontal en móvil */
+}
+
+/* Prevenir zoom en inputs en iOS */
+@media screen and (max-width: 768px) {
+	input, select, textarea {
+		font-size: 16px !important;
+	}
+}
+
+/* Asegurar que el contenido no se desborde en móvil */
+* {
+	max-width: 100%;
+}
+
+img, video {
+	height: auto;
 }
 
 ::-webkit-scrollbar {

@@ -48,7 +48,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 	<!-- Header -->
-	<header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-transparent" style="background-color: transparent !important;">
+	<header id="header" class="fixed top-0 w-full transition-all duration-300 border-b border-white/5 bg-transparent" style="background-color: transparent !important; z-index: 150;">
 		<nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex justify-between items-center">
 			<a href="/" class="logo">
 				<span class="text-2xl sm:text-3xl font-bold" style="color: #d4006b; filter: drop-shadow(0 0 10px rgba(212, 0, 107, 0.8)); font-family: 'Puritan', sans-serif; letter-spacing: 0.05em;">
@@ -79,38 +79,38 @@ const { title } = Astro.props;
 			</div>
 
 			<!-- Mobile Menu Button -->
-			<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 group z-50 relative" aria-label="Toggle menu">
+			<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 group relative" aria-label="Toggle menu">
 				<span class="hamburger-line w-6 h-0.5 bg-[#ff007f] transition-all duration-300"></span>
 				<span class="hamburger-line w-6 h-0.5 bg-[#00f2ff] transition-all duration-300"></span>
 				<span class="hamburger-line w-6 h-0.5 bg-[#ff8c00] transition-all duration-300"></span>
 			</button>
 		</nav>
+	</header>
 
-		<!-- Mobile Menu Overlay -->
-		<div id="mobile-menu" class="mobile-menu fixed inset-0 bg-[#0b0b0f]/98 backdrop-blur-lg z-40 translate-x-full transition-transform duration-300 md:hidden">
-			<div class="flex flex-col items-center justify-center h-full gap-8 px-8">
-				<!-- Mobile Navigation Links -->
-				<a href="/" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.home">Home</a>
-				<a href="/projects" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.projects">Projects</a>
-				<a href="/services" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.services">Services</a>
+	<!-- Mobile Menu Overlay - OUTSIDE HEADER -->
+	<div id="mobile-menu" class="mobile-menu fixed inset-0 bg-[#0b0b0f]/98 backdrop-blur-lg translate-x-full transition-transform duration-300 md:hidden" style="z-index: 100;">
+		<div class="flex flex-col items-center justify-center h-full gap-8 px-8">
+			<!-- Mobile Navigation Links -->
+			<a href="/" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.home">Home</a>
+			<a href="/projects" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.projects">Projects</a>
+			<a href="/services" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.services">Services</a>
 
-				<a href="/contact" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.contact">Contact</a>
-				
-				<!-- Mobile Language Switcher -->
-				<div class="flex gap-4 mt-8">
-					<button data-lang="es" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="Español">
-						ES
-					</button>
-					<button data-lang="en" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="English">
-						GB
-					</button>
-					<button data-lang="it" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="Italiano">
-						IT
-					</button>
-				</div>
+			<a href="/contact" class="mobile-nav-link text-4xl font-bold text-gray-400 hover:text-[#00f2ff] transition-colors duration-300" style="font-family: 'League Gothic', Impact, sans-serif;" data-i18n="nav.contact">Contact</a>
+			
+			<!-- Mobile Language Switcher -->
+			<div class="flex gap-4 mt-8">
+				<button data-lang="es" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="Español">
+					ES
+				</button>
+				<button data-lang="en" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="English">
+					GB
+				</button>
+				<button data-lang="it" class="lang-btn w-12 h-12 rounded-full border-2 border-gray-400 hover:border-[#00f2ff] text-gray-400 hover:text-[#00f2ff] transition-all duration-300 flex items-center justify-center text-base font-medium" title="Italiano">
+					IT
+				</button>
 			</div>
 		</div>
-	</header>
+	</div>
 
 	<!-- Main Content -->
 	<main>
@@ -135,7 +135,6 @@ const { title } = Astro.props;
 				home: 'Home',
 				projects: 'Projects',
 				services: 'Services',
-
 				contact: 'Contact'
 			}
 		},
@@ -145,7 +144,6 @@ const { title } = Astro.props;
 				home: 'Inicio',
 				projects: 'Proyectos',
 				services: 'Servicios',
-
 				contact: 'Contacto'
 			}
 		},
@@ -155,7 +153,6 @@ const { title } = Astro.props;
 				home: 'Home',
 				projects: 'Progetti',
 				services: 'Servizi',
-
 				contact: 'Contatto'
 			}
 		}
@@ -172,52 +169,51 @@ const { title } = Astro.props;
 			// Toggle menu
 			mobileMenuBtn.addEventListener('click', () => {
 				isMenuOpen = !isMenuOpen;
+				const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
 				
 				if (isMenuOpen) {
 					mobileMenu.classList.remove('translate-x-full');
 					mobileMenu.classList.add('translate-x-0');
 					// Animate hamburger to X
-					const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
-				(lines[0] as HTMLElement).style.transform = 'rotate(45deg) translateY(8px)';
-				(lines[1] as HTMLElement).style.opacity = '0';
-				(lines[2] as HTMLElement).style.transform = 'rotate(-45deg) translateY(-8px)';
+					if (lines[0]) (lines[0] as HTMLElement).style.transform = 'rotate(45deg) translateY(8px)';
+					if (lines[1]) (lines[1] as HTMLElement).style.opacity = '0';
+					if (lines[2]) (lines[2] as HTMLElement).style.transform = 'rotate(-45deg) translateY(-8px)';
 					document.body.style.overflow = 'hidden';
 				} else {
 					mobileMenu.classList.remove('translate-x-0');
 					mobileMenu.classList.add('translate-x-full');
 					// Reset hamburger
-					const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
-				(lines[0] as HTMLElement).style.transform = '';
-				(lines[1] as HTMLElement).style.opacity = '1';
-				(lines[2] as HTMLElement).style.transform = '';
+					if (lines[0]) (lines[0] as HTMLElement).style.transform = '';
+					if (lines[1]) (lines[1] as HTMLElement).style.opacity = '1';
+					if (lines[2]) (lines[2] as HTMLElement).style.transform = '';
 					document.body.style.overflow = '';
 				}
 			});
 
+			// Close menu function
+			const closeMenu = () => {
+				isMenuOpen = false;
+				mobileMenu.classList.remove('translate-x-0');
+				mobileMenu.classList.add('translate-x-full');
+				const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
+				if (lines[0]) (lines[0] as HTMLElement).style.transform = '';
+				if (lines[1]) (lines[1] as HTMLElement).style.opacity = '1';
+				if (lines[2]) (lines[2] as HTMLElement).style.transform = '';
+				document.body.style.overflow = '';
+			};
+
 			// Close menu when clicking on a link
-		const closeMenu = () => {
-			isMenuOpen = false;
-			mobileMenu.classList.remove('translate-x-0');
-			mobileMenu.classList.add('translate-x-full');
-			const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
-			(lines[0] as HTMLElement).style.transform = '';
-			(lines[1] as HTMLElement).style.opacity = '1';
-			(lines[2] as HTMLElement).style.transform = '';
-			document.body.style.overflow = '';
-		};
-
-		mobileNavLinks.forEach(link => {
-			link.addEventListener('click', (e) => {
-				// Always close menu immediately
-				setTimeout(closeMenu, 100);
+			mobileNavLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					closeMenu();
+				});
 			});
-		});
 
-		// Close menu when clicking outside
-		mobileMenu.addEventListener('click', (e) => {
-			if (e.target === mobileMenu) {
-				closeMenu();
-			}
+			// Close menu when clicking outside
+			mobileMenu.addEventListener('click', (e) => {
+				if (e.target === mobileMenu) {
+					closeMenu();
+				}
 			});
 		}
 
