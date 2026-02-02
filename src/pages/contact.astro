@@ -10,7 +10,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 			<img 
 				src="/images/contact_hero.png" 
 				alt="Contact background" 
-				class="w-full h-full min-h-full object-cover"
+				class="w-full h-full min-h-full object-cover sm:object-center"
+				style="object-position: 70% center;"
 			/>
 			<!-- Dark Gradient Overlay -->
 			<div class="absolute inset-0 bg-gradient-to-b from-[#0b0b0f]/85 via-[#0b0b0f]/70 to-[#0b0b0f]/95"></div>
@@ -33,7 +34,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 	</section>
 
 	<!-- Contact Form Section -->
-	<section class="relative py-16 sm:py-20 lg:py-28 bg-[#0b0b0f] flex justify-center">
+	<section class="relative -mt-[400px] sm:mt-0 py-16 sm:py-20 lg:py-28 bg-transparent sm:bg-[#0b0b0f] flex justify-center z-50">
 		<div style="max-width: 600px; width: 100%;" class="px-4">
 			<!-- Form Container -->
 			<div id="form-container" class="bg-[#13131a]/70 backdrop-blur-sm p-8 sm:p-10 lg:p-12 rounded-2xl border-2 border-[#00f2ff] shadow-[0_0_40px_rgba(0,242,255,0.3)] transition-all duration-300">
