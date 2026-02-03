@@ -4,11 +4,11 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <MainLayout title="Services | LGGM">
 	<!-- Hero Section with Video -->
-	<section class="relative h-screen sm:h-[70vh] lg:h-screen overflow-hidden bg-[#0b0b0f]">
+	<section class="relative h-[80vh] sm:h-[85vh] lg:h-screen overflow-hidden bg-[#0b0b0f]">
 		<!-- Video Background -->
 		<video 
 			id="services-video"
-			class="absolute inset-0 w-full h-full min-h-full object-cover object-center scale-95 sm:scale-105 opacity-0 transition-opacity duration-1500 z-0"
+			class="absolute inset-0 w-full h-full min-h-full object-cover opacity-0 transition-opacity duration-1500 z-0"
 			src="/images/services_video.mp4"
 			poster="/images/services_hero.png"
 			autoplay
@@ -18,11 +18,11 @@ import MainLayout from '../layouts/MainLayout.astro';
 		</video>
 
 		<!-- Overlay Gradient -->
-		<div class="absolute inset-0 bg-linear-to-b from-[#0b0b0f] via-[#0b0b0f]/40 to-[#0b0b0f] z-10"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-[#0b0b0f]/70 via-[#0b0b0f]/50 to-[#0b0b0f] z-10"></div>
 
 		<!-- Hero Content -->
-		<div class="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center">
-			<h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-6 uppercase" 
+		<div class="relative z-20 flex flex-col items-end justify-center h-full px-6 text-center pb-12 sm:pb-16 lg:pb-20">
+			<h1 class="text-3xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-3 sm:mb-6 uppercase max-w-[80%] mx-auto" 
 				style="font-family: 'League Gothic', Impact, sans-serif; 
 				background: linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%); 
 				-webkit-background-clip: text; 
@@ -39,7 +39,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 	</section>
 
 	<!-- Services Section -->
-	<section class="relative min-h-screen bg-[#0b0b0f] -mt-32 sm:mt-0 pt-0 sm:pt-16 lg:pt-32 pb-6 sm:pb-20 px-6 sm:px-8 lg:px-12 z-30">
+	<section class="relative min-h-screen bg-[#0b0b0f] mt-0 pt-0 sm:pt-16 lg:pt-32 pb-6 sm:pb-20 px-6 sm:px-8 lg:px-12 z-30">
 		<div class="container mx-auto max-w-7xl">
 			<!-- Header -->
 			<div class="text-center mb-2 sm:mb-12 lg:mb-20">
@@ -145,6 +145,30 @@ import MainLayout from '../layouts/MainLayout.astro';
 				</div>
 			</div>
 			</div>
+
+	</section>
+
+	<!-- Estilos específicos para optimización del video en mobile -->
+	<style>
+		/* Optimización del video - máximo contenido visible sin zoom */
+		#services-video {
+			object-position: center center;
+			transform: none;
+		}
+
+		@media (min-width: 640px) {
+			#services-video {
+				transform: none;
+				object-position: center center;
+			}
+		}
+
+		@media (min-width: 1024px) {
+			#services-video {
+				transform: none;
+			}
+		}
+	</style>
 
 	<!-- Traducciones y scripts al final del archivo -->
 	<script>

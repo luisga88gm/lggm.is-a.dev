@@ -5,11 +5,12 @@ import MainLayout from '../layouts/MainLayout.astro';
 <MainLayout title="LGGM - Digital Realities">
 
 	<!-- Hero Section -->
-	<section id="home" class="relative w-full h-screen overflow-hidden">
+	<section id="home" class="relative w-full h-[80vh] sm:h-[85vh] lg:h-screen overflow-hidden">
 		<!-- Background Video/Image - Full Viewport -->
 		<div class="absolute inset-0 w-full h-full z-0">
 			<!-- Video con fallback a imagen -->
 			<video 
+				id="home-video"
 				autoplay 
 				loop 
 				muted 
@@ -28,28 +29,28 @@ import MainLayout from '../layouts/MainLayout.astro';
 	class="absolute inset-0 w-full h-full min-h-full object-cover z-0"
 			/>
 			<!-- Dark Gradient Overlay - Optimizado para legibilidad -->
-			<div class="absolute inset-0 bg-linear-to-b from-[#0b0b0f]/80 via-[#0b0b0f]/60 to-[#0b0b0f]/90 z-10"></div>
+			<div class="absolute inset-0 bg-linear-to-b from-[#0b0b0f]/80 via-[#0b0b0f]/60 to-[#0b0b0f] z-10"></div>
 		</div>
 
 		<!-- Content - Over Video -->
-		<div class="absolute inset-0 z-20 flex items-center pt-20 sm:pt-24">
+		<div class="absolute inset-0 z-20 flex items-end justify-center pb-12 sm:pb-16 lg:pb-20">
 			<div class="w-full px-4 sm:px-6 lg:px-12">
 				<div class="w-full">
-			<h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase mb-4 sm:mb-6 text-white" style="font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.02em; line-height: 0.85;" data-i18n="hero.title">
+			<h1 class="text-3xl sm:text-6xl md:text-7xl lg:text-8xl uppercase mb-3 sm:mb-6 text-white max-w-[80%] mx-auto" style="font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.02em; line-height: 0.85;" data-i18n="hero.title">
 						CRAFTING DIGITAL<br>
 						REALITIES
 					</h1>
 					
-				<p class="text-2xl sm:text-3xl md:text-4xl mb-8 sm:mb-10" style="font-family: 'Satisfy', cursive; color: #ff007f;" data-i18n="hero.subtitle">
-				From lines of code to luminous landscapes
+			<p class="text-xl sm:text-3xl md:text-4xl mb-4 sm:mb-10" style="font-family: 'Satisfy', cursive; color: #ff007f;" data-i18n="hero.subtitle">
+			From lines of code to luminous landscapes
 			</p>	
-					<div class="flex flex-col sm:flex-row gap-4">
+					<div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
 						<!-- Button 1: Solid Pink -->
-					<button class="px-10 py-2 text-black text-2xl sm:text-3xl uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,0,127,0.6)] hover:scale-105" style="background-color: #d4006b; font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.1em; border-radius: 9999px;" data-i18n="hero.button1">
-						VIEW PROJECTS
+					<button class="px-8 py-1.5 sm:px-10 sm:py-2 text-black text-xl sm:text-2xl md:text-3xl uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,0,127,0.6)] hover:scale-105" style="background-color: #d4006b; font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.1em; border-radius: 9999px;" data-i18n="hero.button1">
+					VIEW PROJECTS
 					</button>
 					<!-- Button 2: Solid Cyan -->
-					<button class="px-10 py-2 text-black text-2xl sm:text-3xl uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,242,255,0.6)] hover:scale-105" style="background-color: #00c7d4; font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.1em; border-radius: 9999px;" data-i18n="hero.button2">
+					<button class="px-8 py-1.5 sm:px-10 sm:py-2 text-black text-xl sm:text-2xl md:text-3xl uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,242,255,0.6)] hover:scale-105" style="background-color: #00c7d4; font-family: 'League Gothic', Impact, sans-serif; letter-spacing: 0.1em; border-radius: 9999px;" data-i18n="hero.button2">
 							LET'S CONNECT
 						</button>
 					</div>
@@ -66,7 +67,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 	</section>
 
 	<!-- Services Section -->
-	<section id="services" class="relative pt-0 pb-6 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#0b0b0f] -mt-40 sm:mt-0 z-30 sm:z-auto">
+	<section id="services" class="relative pt-0 pb-6 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#0b0b0f] z-30 sm:z-auto">
 		<div class="container mx-auto max-w-7xl">
 			<h2 class="text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-2 sm:mb-12 lg:mb-16 text-center" style="font-family: 'League Gothic', Impact, sans-serif;">
 				<span class="text-[#ff007f]" data-i18n="services.title">SERVICES</span>
@@ -234,6 +235,27 @@ import MainLayout from '../layouts/MainLayout.astro';
 </script>
 
 <style>
+	/* Optimización del video hero - máximo contenido visible sin zoom */
+	#home-video {
+		/* Sin zoom para mostrar todo el contenido posible */
+		object-position: center center;
+		transform: none;
+	}
+
+	/* Mantener sin zoom en todos los tamaños de pantalla */
+	@media (min-width: 640px) {
+		#home-video {
+			transform: none;
+			object-position: center center;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		#home-video {
+			transform: none;
+		}
+	}
+
 	/* Smooth animations */
 	@keyframes fadeIn {
 		from { opacity: 0; transform: translateY(20px); }

@@ -56,8 +56,8 @@ const projects = [
 						<!-- Project Image -->
 						{project.image ? (
 							<div class="relative h-56 bg-gradient-to-br from-[#1a1a2e] to-[#0b0b0f] overflow-hidden">
-								<img src={project.image} alt={project.title} class="w-full h-full object-cover object-center" loading="lazy" />
-								<div class={`absolute inset-0 bg-linear-to-t ${project.borderColor === 'cyan' ? 'from-[#00f2ff]/20' : 'from-[#ff007f]/20'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+								<img src={project.image} alt={project.title} class="w-full h-full object-cover object-center" loading="lazy" />							<!-- Gradiente permanente negro en la parte inferior -->
+							<div class="absolute inset-0 bg-gradient-to-t from-[#0b0b0f] via-transparent to-transparent"></div>								<div class={`absolute inset-0 bg-linear-to-t ${project.borderColor === 'cyan' ? 'from-[#00f2ff]/20' : 'from-[#ff007f]/20'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 							</div>
 						) : (
 							<div class="relative h-56 bg-gradient-to-br from-[#1a1a2e] to-[#0b0b0f] overflow-hidden">
